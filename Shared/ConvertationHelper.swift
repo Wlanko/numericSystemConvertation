@@ -9,7 +9,7 @@ import Foundation
 
 
 struct ConvertationHelper {
-    func numericConvertation(iNum: String, iNS: String, oNS: String) throws -> String {
+    static func numericConvertation(iNum: String, iNS: String, oNS: String) throws -> String {
         var num: Int = 0
         var ans: [String] = []
         

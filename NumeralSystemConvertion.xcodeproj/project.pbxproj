@@ -19,8 +19,8 @@
 		BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BBA62BB227062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */; };
 		BBA62BB327062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */; };
-		BBC7B08D27010DA100E3B70F /* Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* Functionality.swift */; };
-		BBC7B08E27010DA100E3B70F /* Functionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* Functionality.swift */; };
+		BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */; };
+		BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		BB52E62226FF473900B910BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
 		BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForNumericConversion.swift; sourceTree = "<group>"; };
-		BBC7B08C27010DA100E3B70F /* Functionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functionality.swift; sourceTree = "<group>"; };
+		BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E94EA2D270A05DE00A84F95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */,
+				BB52E5FB26FF473700B910BD /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BB52E5F426FF473600B910BD = {
 			isa = PBXGroup;
 			children = (
@@ -108,10 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */,
-				BB52E5FB26FF473700B910BD /* ContentView.swift */,
-				BBC7B08C27010DA100E3B70F /* Functionality.swift */,
+				5E94EA2D270A05DE00A84F95 /* Views */,
+				BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */,
 				BB52E5FC26FF473900B910BD /* Assets.xcassets */,
-				BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */,
 				BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */,
 			);
 			path = Shared;
@@ -321,7 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62526FF473900B910BD /* ContentView.swift in Sources */,
-				BBC7B08D27010DA100E3B70F /* Functionality.swift in Sources */,
+				BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BBA62BB227062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */,
 				BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
@@ -333,7 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
-				BBC7B08E27010DA100E3B70F /* Functionality.swift in Sources */,
+				BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62426FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BBA62BB327062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */,
 				BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,

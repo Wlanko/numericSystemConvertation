@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct TextFieldForNumericConversion: View{
-    @State var text: String
-    var placeholderText: String = ""
+    @Binding var text: String
+    var topLabel: String
+    var placeholderText: String
     
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: -2.0) {
-            Text(placeholderText)
+            Text(topLabel)
                 .font(.system(size: 16))
                 .padding(.leading, 5)
             TextField(placeholderText, text: $text)
@@ -31,6 +32,6 @@ struct TextFieldForNumericConversion: View{
 
 struct TextFieldForNumericConversion_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldForNumericConversion(text: "SomeString")
+        TextFieldForNumericConversion(text: .constant(""), topLabel: "Test", placeholderText: "Tes1")
     }
 }
