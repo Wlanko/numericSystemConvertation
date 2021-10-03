@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var outputNumber: String = ""
     @State var inputNumericSystem: String = ""
     @State var outputNumericSystem: String = ""
+    @State var showingAlert: Bool = false
+    @State var message: String = ""
     
     var convertationHelper = ConvertationHelper()
     
@@ -20,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         
         VStack{
-            var inputNumericSystemTextField = TextFieldForNumericConversion(text: inputNumericSystem)
+            // let inputNumericSystemTextField = TextFieldForNumericConversion(text: inputNumericSystem)
             HStack {// lables
                 
                 
@@ -65,9 +67,27 @@ struct ContentView: View {
                     .padding(5)
             }
             
+            
+            
             HStack {
                 Button("Convert", action: {
-                    outputNumber = convertationHelper.numericConvertation(iNum: inputNumber, iNS: inputNumericSystem, oNS: outputNumericSystem)
+                    do {
+                        outputNumber = try convertationHelper.numericConvertation(iNum: inputNumber, iNS: inputNumericSystem, oNS: outputNumericSystem)
+                    } catch ErrorForNumericConversion.invalidInput{
+                        showingAlert = true
+                        message = "Bad Input"
+                    } catch ErrorForNumericConversion.wrongNumericSystem{
+                        showingAlert = true
+                        message = "Check numeric sysytem boxes"
+                    } catch {
+                        showingAlert = true
+                        message = "Uncknown Error"
+                    }
+                }).alert(isPresented: $showingAlert, content: {
+                    Alert(
+                        title: Text("Bad Input"),
+                        message: Text("Be careful next time")
+                    )
                 })
             }
             .padding(.top)

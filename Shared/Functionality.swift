@@ -9,26 +9,34 @@ import Foundation
 
 
 struct ConvertationHelper {
-    func numericConvertation(iNum: String, iNS: String, oNS: String) -> String {
+    func numericConvertation(iNum: String, iNS: String, oNS: String) throws -> String {
         var num: Int = 0
         var ans: [String] = []
-        let charList = ["10": "A", "11": "B", "12": "C", "13": "D", "14": "E", "15": "F"] // charcode
+        
         // Converting to base 10
         if let myDecimal = Int(iNum, radix: Int(iNS) ?? 10) {
             num = myDecimal
         } else {
-            print("Bad input") // error handling
+            throw ErrorForNumericConversion.invalidInput// error handling
         }
         
-        // Converting to required base
         
-        while num >= 1 {
-            if num % Int(oNS)! > 9 {
-                ans.append(charList[String(num % Int(oNS)!)]!) // error handling
-            } else {
-                ans.append(String(num % Int(oNS)!))
+        let charForNumeric = Int(("A" as UnicodeScalar).value)
+        
+        // Converting to required base
+        if let outputNumericSystem = Int(oNS) {
+            while num >= 1 {
+                if num % outputNumericSystem > 9 {
+                    if let element = UnicodeScalar(charForNumeric + (num % outputNumericSystem - 10)) {
+                        ans.append(String(element))
+                    }
+                } else {
+                    ans.append(String(num % outputNumericSystem))
+                }
+                num = Int(num / outputNumericSystem)
             }
-            num = Int(num / Int(oNS)!)
+        } else {
+            throw ErrorForNumericConversion.wrongNumericSystem
         }
         
         ans = ans.reversed()

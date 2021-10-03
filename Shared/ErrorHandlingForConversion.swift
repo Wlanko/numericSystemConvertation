@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum ErrorForNumericConversion: Error {
+    case invalidInput
+    case wrongNumericSystem
+    
+    case numbreDoesNotConfirmToNumericSystem
+}
+
+
