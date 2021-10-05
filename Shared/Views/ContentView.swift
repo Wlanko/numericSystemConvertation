@@ -15,24 +15,30 @@ struct ContentView: View {
     @State var showingAlert: Bool = false
     @State var message: String = ""
     
+    var textForInputNmericSystem = "Input numeric system"
+    var textForInputNmber = "Input number"
+    var textForOutputNumericSystem = "Output numeric system"
+    var textForOutputNumber = "Output number"
+    var textForButton = "Convert"
+    
     var body: some View {
         
         VStack{
             HStack {
-                TextFieldForNumericConversion(text: $inputNumericSystem, topLabel: "Input numeric system", placeholderText: "Input Numeric System")
+                TextFieldForNumericConversion(text: $inputNumericSystem, topLabel: textForInputNmericSystem, placeholderText: textForInputNmericSystem)
                  // castom view
-                TextFieldForNumericConversion(text: $inputNumber, topLabel: "Input number", placeholderText: "Input Number")
+                TextFieldForNumericConversion(text: $inputNumber, topLabel: textForInputNmber, placeholderText: textForInputNmber)
             }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             
             HStack {
-                TextFieldForNumericConversion(text: $outputNumericSystem, topLabel: "Output numeric system", placeholderText: "Output Numeric System")
-                TextFieldForNumericConversion(text: $outputNumber, topLabel: "Output number", placeholderText: "Output Number")
+                TextFieldForNumericConversion(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                TextFieldForNumericConversion(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
             }
             
             
             
             HStack {
-                Button("Convert", action: {
+                Button(textForButton, action: {
                     do {
                         outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
                                                                                   iNS: inputNumericSystem,
