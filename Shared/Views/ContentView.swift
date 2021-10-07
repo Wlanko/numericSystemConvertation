@@ -15,22 +15,22 @@ struct ContentView: View {
     @State var showingAlert: Bool = false
     @State var message: String = ""
     
-    var textForInputNmericSystem = "Input numeric system"
-    var textForInputNmber = "Input number"
-    var textForOutputNumericSystem = "Output numeric system"
-    var textForOutputNumber = "Output number"
-    var textForButton = "Convert"
+    let textForInputNumericSystem = "Input numeric system"
+    let textForInputNumber = "Input number"
+    let textForOutputNumericSystem = "Output numeric system"
+    let textForOutputNumber = "Output number"
+    let textForButton = "Convert"
     
     var body: some View {
         VStack{
-            HStack {
-                TextFieldForNumericConversion(text: $inputNumericSystem, topLabel: textForInputNmericSystem, placeholderText: textForInputNmericSystem)
+            HStack(alignment: .bottom) {
+                TextFieldForNumericConversion(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
                     .keyboardType(.decimalPad)
-                // castom view
-                TextFieldForNumericConversion(text: $inputNumber, topLabel: textForInputNmber, placeholderText: textForInputNmber)
+                // custom view
+                TextFieldForNumericConversion(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
             }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             
-            HStack {
+            HStack(alignment: .bottom) {
                 TextFieldForNumericConversion(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
                     .keyboardType(.decimalPad)
                 TextFieldForNumericConversion(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
