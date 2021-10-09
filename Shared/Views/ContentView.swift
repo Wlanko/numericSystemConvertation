@@ -24,16 +24,16 @@ struct ContentView: View {
     var body: some View {
         VStack{
             HStack(alignment: .bottom) {
-                TextFieldForNumericConversion(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
+                TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
                     .keyboardType(.decimalPad)
                 // custom view
-                TextFieldForNumericConversion(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
+                TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
             }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             
             HStack(alignment: .bottom) {
-                TextFieldForNumericConversion(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
                     .keyboardType(.decimalPad)
-                TextFieldForNumericConversion(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
             }
             
             
@@ -57,8 +57,9 @@ struct ContentView: View {
             .padding(.top)
             
             Spacer()
-        }.onTapGesture {
-            
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
             self.hideKeyboard()
         }
     }

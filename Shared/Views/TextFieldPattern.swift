@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextFieldForNumericConversion: View{
+struct TextFieldPattern: View{
     @Binding var text: String
     var topLabel: String
     var placeholderText: String
@@ -32,6 +32,6 @@ struct TextFieldForNumericConversion: View{
 
 struct TextFieldForNumericConversion_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldForNumericConversion(text: .constant(""), topLabel: "Test", placeholderText: "Tes1")
+        TextFieldPattern(text: .constant(""), topLabel: "Test", placeholderText: "Tes1")
     }
 }

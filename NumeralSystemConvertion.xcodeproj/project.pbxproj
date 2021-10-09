@@ -17,8 +17,8 @@
 		BB52E62826FF473900B910BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB52E5FC26FF473900B910BD /* Assets.xcassets */; };
 		BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
-		BBA62BB227062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */; };
-		BBA62BB327062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */; };
+		BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
+		BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
 		BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */; };
 		BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		BB52E62026FF473900B910BD /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BB52E62226FF473900B910BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
-		BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForNumericConversion.swift; sourceTree = "<group>"; };
+		BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPattern.swift; sourceTree = "<group>"; };
 		BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 		5E94EA2D270A05DE00A84F95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBA62BB127062A55000D5D96 /* TextFieldForNumericConversion.swift */,
+				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
 			);
 			path = Views;
@@ -331,7 +331,7 @@
 				BB52E62526FF473900B910BD /* ContentView.swift in Sources */,
 				BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
-				BBA62BB227062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */,
+				BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,7 +343,7 @@
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
 				BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62426FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
-				BBA62BB327062A55000D5D96 /* TextFieldForNumericConversion.swift in Sources */,
+				BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
