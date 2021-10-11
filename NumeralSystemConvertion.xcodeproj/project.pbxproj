@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085A58B0FB19446964F8CE79 /* Pods_NumeralSystemConvertion__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */; };
+		61E6250A9787C8A71F24946A /* Pods_NumeralSystemConvertion__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */; };
 		BB52E61626FF473900B910BD /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E61526FF473900B910BD /* Tests_iOS.swift */; };
 		BB52E62126FF473900B910BD /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E62026FF473900B910BD /* Tests_macOS.swift */; };
 		BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */; };
@@ -15,6 +17,14 @@
 		BB52E62626FF473900B910BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E5FB26FF473700B910BD /* ContentView.swift */; };
 		BB52E62726FF473900B910BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB52E5FC26FF473900B910BD /* Assets.xcassets */; };
 		BB52E62826FF473900B910BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB52E5FC26FF473900B910BD /* Assets.xcassets */; };
+		BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
+		BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
+		BB78130C27133B210055669E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB78130B27133B210055669E /* GoogleService-Info.plist */; };
+		BB78130D27133B210055669E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB78130B27133B210055669E /* GoogleService-Info.plist */; };
+		BB78130F271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
+		BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
+		BB781313271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
+		BB781314271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
 		BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
@@ -41,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumeralSystemConvertion__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumeralSystemConvertion__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (iOS).release.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralSystemConvertionApp.swift; sourceTree = "<group>"; };
 		BB52E5FB26FF473700B910BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB52E5FC26FF473900B910BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,9 +68,17 @@
 		BB52E61C26FF473900B910BD /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB52E62026FF473900B910BD /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BB52E62226FF473900B910BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB7813082711B8F20055669E /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
+		BB78130B27133B210055669E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationWithPhoneNumber.swift; sourceTree = "<group>"; };
+		BB781312271357630055669E /* EnterVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCode.swift; sourceTree = "<group>"; };
+		BB781315271370180055669E /* NumeralSystemConvertion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumeralSystemConvertion.entitlements; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
 		BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPattern.swift; sourceTree = "<group>"; };
 		BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertationHelper.swift; sourceTree = "<group>"; };
+		CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (macOS)/Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (macOS).release.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (macOS)/Pods-NumeralSystemConvertion (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (iOS).debug.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085A58B0FB19446964F8CE79 /* Pods_NumeralSystemConvertion__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E6250A9787C8A71F24946A /* Pods_NumeralSystemConvertion__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +120,7 @@
 			children = (
 				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
+				BB781311271356E90055669E /* LogInWithPoneNumber */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,12 +128,15 @@
 		BB52E5F426FF473600B910BD = {
 			isa = PBXGroup;
 			children = (
+				BB781315271370180055669E /* NumeralSystemConvertion.entitlements */,
 				BB52E5F926FF473700B910BD /* Shared */,
 				BB52E60326FF473900B910BD /* iOS */,
 				BB52E60A26FF473900B910BD /* macOS */,
 				BB52E61426FF473900B910BD /* Tests iOS */,
 				BB52E61F26FF473900B910BD /* Tests macOS */,
 				BB52E60226FF473900B910BD /* Products */,
+				D1D4617D834EDAE205318D3A /* Pods */,
+				D5E7C0B9CCDD574A3FD38B9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,10 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */,
+				BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */,
 				5E94EA2D270A05DE00A84F95 /* Views */,
 				BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */,
 				BB52E5FC26FF473900B910BD /* Assets.xcassets */,
 				BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */,
+				BB78130B27133B210055669E /* GoogleService-Info.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -171,6 +200,35 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		BB781311271356E90055669E /* LogInWithPoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				BB7813082711B8F20055669E /* EnterPhoneNumber.swift */,
+				BB781312271357630055669E /* EnterVerificationCode.swift */,
+			);
+			path = LogInWithPoneNumber;
+			sourceTree = "<group>";
+		};
+		D1D4617D834EDAE205318D3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */,
+				B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */,
+				CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */,
+				EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D5E7C0B9CCDD574A3FD38B9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */,
+				860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB52E62B26FF473900B910BD /* Build configuration list for PBXNativeTarget "NumeralSystemConvertion (iOS)" */;
 			buildPhases = (
+				749D5E776D16F48EC7C2D39C /* [CP] Check Pods Manifest.lock */,
 				BB52E5FD26FF473900B910BD /* Sources */,
 				BB52E5FE26FF473900B910BD /* Frameworks */,
 				BB52E5FF26FF473900B910BD /* Resources */,
+				B6ACCF0C0DE2B013F917EBD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB52E62E26FF473900B910BD /* Build configuration list for PBXNativeTarget "NumeralSystemConvertion (macOS)" */;
 			buildPhases = (
+				172BFC5AFB2A6FD147AD47E4 /* [CP] Check Pods Manifest.lock */,
 				BB52E60526FF473900B910BD /* Sources */,
 				BB52E60626FF473900B910BD /* Frameworks */,
 				BB52E60726FF473900B910BD /* Resources */,
@@ -296,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62726FF473900B910BD /* Assets.xcassets in Resources */,
+				BB78130C27133B210055669E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62826FF473900B910BD /* Assets.xcassets in Resources */,
+				BB78130D27133B210055669E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,12 +386,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		172BFC5AFB2A6FD147AD47E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NumeralSystemConvertion (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		749D5E776D16F48EC7C2D39C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NumeralSystemConvertion (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6ACCF0C0DE2B013F917EBD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB52E5FD26FF473900B910BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62526FF473900B910BD /* ContentView.swift in Sources */,
+				BB781313271357630055669E /* EnterVerificationCode.swift in Sources */,
+				BB78130F271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */,
 				BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */,
@@ -340,7 +470,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
+				BB781314271357630055669E /* EnterVerificationCode.swift in Sources */,
+				BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */,
 				BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
 				BB52E62426FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */,
@@ -493,9 +626,11 @@
 		};
 		BB52E62C26FF473900B910BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NumeralSystemConvertion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47J4D692KF;
 				ENABLE_PREVIEWS = YES;
@@ -515,9 +650,11 @@
 		};
 		BB52E62D26FF473900B910BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NumeralSystemConvertion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47J4D692KF;
 				ENABLE_PREVIEWS = YES;
@@ -538,6 +675,7 @@
 		};
 		BB52E62F26FF473900B910BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -562,6 +700,7 @@
 		};
 		BB52E63026FF473900B910BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
