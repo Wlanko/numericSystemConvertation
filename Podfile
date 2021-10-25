@@ -7,6 +7,7 @@ target 'NumeralSystemConvertion (iOS)' do
 
   # Pods for NumeralSystemConvertion (iOS)
 	pod 'Firebase/Auth'
+	pod 'FirebaseUI'
 
 end
 

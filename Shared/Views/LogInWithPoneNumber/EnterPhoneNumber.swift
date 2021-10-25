@@ -8,22 +8,26 @@
 import SwiftUI
 import FirebaseAuth
 
+@available(iOS 15.0.0, *)
 struct EnterPhoneNumber: View {
-    @Binding var presentVerificationCodeView: Bool
     @State var phoneNumber: String = ""
     var nextText = "Next"
-    var authWithPhoneNumber = AuthWithPhoneNumber()
+    @ObservedObject var authDelegat = NumericAuthUIDelegate()
+    @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
+    
     
     var phoneNumberText = "Phone number"
     
     var body: some View {
+       
         VStack {
             TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText)
+                .keyboardType(.decimalPad)
             Button(nextText) {
-                presentVerificationCodeView = AuthWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber)
+                authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
             }
         }
-        .sheet(isPresented: $presentVerificationCodeView, content: {
+        .sheet(isPresented: $authWithPhoneNumber.flag, content: {
             EnterVerificationCode()
         })
     }
@@ -31,6 +35,10 @@ struct EnterPhoneNumber: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        EnterPhoneNumber(presentVerificationCodeView: .constant(false))
+        if #available(iOS 15.0.0, *) {
+            EnterPhoneNumber()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

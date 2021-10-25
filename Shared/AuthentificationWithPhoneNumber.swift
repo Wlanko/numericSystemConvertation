@@ -7,27 +7,32 @@
 
 import Foundation
 import FirebaseAuth
+import Combine
 
-struct AuthWithPhoneNumber {
-    static func passPhoneNumber(phoneNumber: String) -> Bool {
-        var flag: Bool = false
+@available(iOS 15.0.0, *)
+class AuthWithPhoneNumber: ObservableObject {
+    
+    
+    
+    @Published var flag: Bool = false
+    
+    func passPhoneNumber(phoneNumber: String, authUIDelegate: NumericAuthUIDelegate){
         PhoneAuthProvider.provider()
             .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
                     UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                    flag = true
+                    self.flag = true
+                    
                 }
             }
-        return flag
     }
     
-    static func signInUserWithVErificationCode(verificationCode: String) -> Bool {
-        var flag = false
+    func signInUserWithVErificationCode(verificationCode: String) {
         guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else {
             print("Error, verification id is not available")
-            return flag
+            return
         }
         
         let credintial = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
@@ -38,7 +43,5 @@ struct AuthWithPhoneNumber {
                 print(error.localizedDescription)
             }
         }
-        
-        return flag
     }
 }

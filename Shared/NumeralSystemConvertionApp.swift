@@ -8,19 +8,31 @@
 import SwiftUI
 import Firebase
 
+@available(iOS 15.0.0, *)
 @main
 struct NumeralSystemConvertionApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser != nil {
                 ContentView()
             } else {
-                EnterPhoneNumber(presentVerificationCodeView: .constant(false))
+                EnterPhoneNumber()
             }
         }
     }
     init() {
-        FirebaseApp.configure()
+        
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+      for urlContext in URLContexts {
+          let url = urlContext.url
+          Auth.auth().canHandle(url)
+      }
+      // URL not auth related, developer should handle it.
     }
 }
+
+
 
