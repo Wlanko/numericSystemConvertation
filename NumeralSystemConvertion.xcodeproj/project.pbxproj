@@ -19,10 +19,10 @@
 		BB52E62826FF473900B910BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB52E5FC26FF473900B910BD /* Assets.xcassets */; };
 		BB736E5B271CAC8D0062C4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB736E5A271CAC8D0062C4B9 /* AppDelegate.swift */; };
 		BB736E5C271CAC8D0062C4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB736E5A271CAC8D0062C4B9 /* AppDelegate.swift */; };
+		BB736E5E272C441A0062C4B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */; };
+		BB736E5F272C441B0062C4B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */; };
 		BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
 		BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
-		BB78130C27133B210055669E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB78130B27133B210055669E /* GoogleService-Info.plist */; };
-		BB78130D27133B210055669E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB78130B27133B210055669E /* GoogleService-Info.plist */; };
 		BB78130F271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781313271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
@@ -73,8 +73,8 @@
 		BB52E62026FF473900B910BD /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BB52E62226FF473900B910BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB736E5A271CAC8D0062C4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB7813082711B8F20055669E /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
-		BB78130B27133B210055669E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationWithPhoneNumber.swift; sourceTree = "<group>"; };
 		BB781312271357630055669E /* EnterVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCode.swift; sourceTree = "<group>"; };
 		BB781315271370180055669E /* NumeralSystemConvertion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumeralSystemConvertion.entitlements; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 		BB52E5F926FF473700B910BD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				BB78130B27133B210055669E /* GoogleService-Info.plist */,
 				BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */,
 				BB736E5A271CAC8D0062C4B9 /* AppDelegate.swift */,
 				5E94EA2D270A05DE00A84F95 /* Views */,
@@ -157,6 +156,7 @@
 				BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */,
 				BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */,
 				BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */,
+				BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */,
 				BB52E5FC26FF473900B910BD /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -366,7 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62726FF473900B910BD /* Assets.xcassets in Resources */,
-				BB78130C27133B210055669E /* GoogleService-Info.plist in Resources */,
+				BB736E5E272C441A0062C4B9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB52E62826FF473900B910BD /* Assets.xcassets in Resources */,
-				BB78130D27133B210055669E /* GoogleService-Info.plist in Resources */,
+				BB736E5F272C441B0062C4B9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

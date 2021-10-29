@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import Combine
+import SwiftUI
 
 @available(iOS 15.0.0, *)
 class AuthWithPhoneNumber: ObservableObject {
@@ -17,15 +18,19 @@ class AuthWithPhoneNumber: ObservableObject {
     @Published var flag: Bool = false
     
     func passPhoneNumber(phoneNumber: String, authUIDelegate: NumericAuthUIDelegate){
+        #if DEBUG
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
+        #endif
         PhoneAuthProvider.provider()
             .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
+
                 if let error = error {
                     print(error.localizedDescription)
-                } else {
-                    UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                    self.flag = true
-                    
+                    return
                 }
+                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                self.flag = true
+                    
             }
     }
     

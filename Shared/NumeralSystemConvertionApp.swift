@@ -11,7 +11,7 @@ import Firebase
 @available(iOS 15.0.0, *)
 @main
 struct NumeralSystemConvertionApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor var delegate: AppDelegate
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser != nil {
@@ -20,9 +20,6 @@ struct NumeralSystemConvertionApp: App {
                 EnterPhoneNumber()
             }
         }
-    }
-    init() {
-        
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
