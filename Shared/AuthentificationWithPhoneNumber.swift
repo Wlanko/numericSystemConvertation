@@ -12,10 +12,8 @@ import SwiftUI
 
 @available(iOS 15.0.0, *)
 class AuthWithPhoneNumber: ObservableObject {
-    
-    
-    
-    @Published var flag: Bool = false
+    @Published var presentEnterPasswordView: Bool = false
+    @Published var presentMainView: Bool = false
     
     func passPhoneNumber(phoneNumber: String, authUIDelegate: NumericAuthUIDelegate){
         #if DEBUG
@@ -29,7 +27,7 @@ class AuthWithPhoneNumber: ObservableObject {
                     return
                 }
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                self.flag = true
+                self.presentEnterPasswordView = true
                     
             }
     }
@@ -46,7 +44,9 @@ class AuthWithPhoneNumber: ObservableObject {
         Auth.auth().signIn(with: credintial) { authResult, error in
             if let error = error {
                 print(error.localizedDescription)
+                return
             }
+            self.presentMainView = true
         }
     }
 }

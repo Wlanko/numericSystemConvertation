@@ -14,22 +14,30 @@ struct EnterPhoneNumber: View {
     var nextText = "Next"
     @ObservedObject var authDelegat = NumericAuthUIDelegate()
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
-    
-    
     var phoneNumberText = "Phone number"
     
     var body: some View {
-       
-        VStack {
-            TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText)
-                .keyboardType(.decimalPad)
-            Button(nextText) {
-                authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+        NavigationView {
+            VStack {
+                TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText)
+                    .keyboardType(.decimalPad)
+                    .padding(.top, 10)
+                Spacer()
+                
+                NavigationLink(destination: EnterVerificationCode(), isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+                
+                Button(nextText) {
+                    authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                }
+                .padding(.bottom, 10)
             }
         }
-        .sheet(isPresented: $authWithPhoneNumber.flag, content: {
-            EnterVerificationCode()
-        })
+        .navigationTitle("Sign In")
+        .navigationBarTitleDisplayMode(.large)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            self.hideKeyboard()
+        }
     }
 }
 
