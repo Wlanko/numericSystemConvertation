@@ -22,46 +22,51 @@ struct ContentView: View {
     let textForButton = "Convert"
     
     var body: some View {
-        VStack{
-            HStack(alignment: .bottom) {
-                TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
-                    .keyboardType(.decimalPad)
-                // custom view
-                TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
-            }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-            
-            HStack(alignment: .bottom) {
-                TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
-                    .keyboardType(.decimalPad)
-                TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
-            }
-            
-            
-            
-            Button(textForButton, action: {
-                do {
-                    outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                        iNS: inputNumericSystem,
-                        oNS: outputNumericSystem)
-                } catch {
-                    message = error.localizedDescription
-                    showingAlert = true
+        NavigationView {
+            VStack {
+                HStack(alignment: .bottom) {
+                    TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
+                        .keyboardType(.decimalPad)
+                    // custom view
+                    TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
+                }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                
+                HStack(alignment: .bottom) {
+                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                        .keyboardType(.decimalPad)
+                    TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
                 }
-            }).alert(isPresented: $showingAlert, content: {
-                Alert(
-                    title: Text("Error"),
-                    message: Text(message)
-                )
-            })
-            
-            .padding(.top)
-            
-            Spacer()
+                
+                
+                
+                Button(textForButton, action: {
+                    do {
+                        outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
+                                                                                  iNS: inputNumericSystem,
+                                                                                  oNS: outputNumericSystem)
+                    } catch {
+                        message = error.localizedDescription
+                        showingAlert = true
+                    }
+                }).alert(isPresented: $showingAlert, content: {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(message)
+                    )
+                })
+                
+                    .padding(.top)
+                
+                Spacer()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
         .contentShape(Rectangle())
         .onTapGesture {
             self.hideKeyboard()
         }
+        
     }
 }
 extension View {

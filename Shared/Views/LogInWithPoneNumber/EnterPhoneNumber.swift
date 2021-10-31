@@ -24,16 +24,18 @@ struct EnterPhoneNumber: View {
                     .padding(.top, 10)
                 Spacer()
                 
-                NavigationLink(destination: EnterVerificationCode(), isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+                NavigationLink(destination: EnterVerificationCode()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
                 
                 Button(nextText) {
                     authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
                 }
                 .padding(.bottom, 10)
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("Sign In")
-        .navigationBarTitleDisplayMode(.large)
         .contentShape(Rectangle())
         .onTapGesture {
             self.hideKeyboard()

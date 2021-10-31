@@ -19,13 +19,17 @@ struct EnterVerificationCode: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: ContentView(), isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
+                NavigationLink(destination: ContentView()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
                 
                 Button("Next") {
                     authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
                 }
                 
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
         .contentShape(Rectangle())
         .onTapGesture {
