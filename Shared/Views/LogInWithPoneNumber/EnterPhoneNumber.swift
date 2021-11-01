@@ -16,10 +16,12 @@ struct EnterPhoneNumber: View {
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
     var phoneNumberText = "Phone number"
     
+    let unremovablePrefix = "+380"
+    
     var body: some View {
         NavigationView {
             VStack {
-                TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText)
+                TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
                     .keyboardType(.decimalPad)
                     .padding(.top, 10)
                 Spacer()
@@ -30,7 +32,7 @@ struct EnterPhoneNumber: View {
                                isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
                 
                 Button(nextText) {
-                    authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                    authWithPhoneNumber.passPhoneNumber(phoneNumber: unremovablePrefix + phoneNumber, authUIDelegate: authDelegat)
                 }
                 .padding(.bottom, 10)
             }

@@ -20,21 +20,21 @@ struct ContentView: View {
     let textForOutputNumericSystem = "Output numeric system"
     let textForOutputNumber = "Output number"
     let textForButton = "Convert"
+    let unremovablePrefix = ""
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack(alignment: .bottom) {
-                    TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem)
+                    TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
                         .keyboardType(.decimalPad)
-                    // custom view
-                    TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber)
+                    TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
                 }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                 
                 HStack(alignment: .bottom) {
-                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                         .keyboardType(.decimalPad)
-                    TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber)
+                    TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                 }
                 
                 

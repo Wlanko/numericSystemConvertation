@@ -10,12 +10,13 @@ import SwiftUI
 @available(iOS 15.0.0, *)
 struct EnterVerificationCode: View {
     var textForVerificarionCodeTextField: String = "Verification code"
+    let unremovablePrefix = ""
     @State var verificationCode: String = ""
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
     var body: some View {
         NavigationView {
             VStack{
-                TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField)
+                TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField, unremovablePrefix: unremovablePrefix)
                 
                 Spacer()
                 
