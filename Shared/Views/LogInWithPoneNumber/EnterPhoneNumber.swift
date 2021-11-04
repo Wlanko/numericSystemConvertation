@@ -10,13 +10,14 @@ import FirebaseAuth
 
 @available(iOS 15.0.0, *)
 struct EnterPhoneNumber: View {
-    @State var phoneNumber: String = ""
+    let unremovablePrefix = "+380"
+    
+    @State var phoneNumber: String = "+380"
     var nextText = "Next"
     @ObservedObject var authDelegat = NumericAuthUIDelegate()
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
     var phoneNumberText = "Phone number"
     
-    let unremovablePrefix = "+380"
     
     var body: some View {
         NavigationView {
@@ -32,8 +33,9 @@ struct EnterPhoneNumber: View {
                                isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
                 
                 Button(nextText) {
-                    authWithPhoneNumber.passPhoneNumber(phoneNumber: unremovablePrefix + phoneNumber, authUIDelegate: authDelegat)
+                    authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
                 }
+                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
                 .padding(.bottom, 10)
             }
             .navigationBarTitleDisplayMode(.inline)

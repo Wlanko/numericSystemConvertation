@@ -28,6 +28,8 @@ struct EnterVerificationCode: View {
                 Button("Next") {
                     authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
                 }
+                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                .padding(.bottom, 10)
                 
             }
             .navigationBarTitleDisplayMode(.inline)

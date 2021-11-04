@@ -15,6 +15,12 @@ class AuthWithPhoneNumber: ObservableObject {
     @Published var presentEnterPasswordView: Bool = false
     @Published var presentMainView: Bool = false
     
+    @Published var showErrorAlert: Bool = false
+    var errorMessage: String = "Some Error occured"
+    
+    let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+
+    
     func passPhoneNumber(phoneNumber: String, authUIDelegate: NumericAuthUIDelegate){
         #if DEBUG
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
@@ -24,6 +30,8 @@ class AuthWithPhoneNumber: ObservableObject {
 
                 if let error = error {
                     print(error.localizedDescription)
+                    self.showErrorAlert = true
+                    self.errorMessage = error.localizedDescription
                     return
                 }
                 UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
@@ -44,6 +52,8 @@ class AuthWithPhoneNumber: ObservableObject {
         Auth.auth().signIn(with: credintial) { authResult, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.showErrorAlert = true
+                self.errorMessage = error.localizedDescription
                 return
             }
             self.presentMainView = true

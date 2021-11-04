@@ -32,7 +32,7 @@ struct ContentView: View {
                 }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                 
                 HStack(alignment: .bottom) {
-                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
+                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                         .keyboardType(.decimalPad)
                     TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                 }
