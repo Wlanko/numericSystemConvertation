@@ -17,10 +17,22 @@ struct TextFieldPattern: View{
     var body: some View {
         VStack(alignment: .leading, spacing: -2.0) {
             Text(topLabel)
+                .foregroundColor(.white)
                 .font(.system(size: 16))
+                .fontWeight(.bold)
                 .padding(.leading, 5)
-            TextField(placeholderText, text: $text)
+                //.glowBorder(color: .white, lineWidth: 3)
+            TextField("", text: $text)
+                .foregroundColor(.white)
                 .padding(4)
+                .placeholder(when: text.isEmpty) {
+                       Text(placeholderText)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14))
+                        .padding(.leading, 5)
+               }
+                //.changeTextFieldForegroundColor(color: .black)
+                //.glowBorder(color: .white, lineWidth: 3)
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(Color.black, lineWidth: 1)
@@ -38,6 +50,6 @@ struct TextFieldPattern: View{
 
 struct TextFieldForNumericConversion_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldPattern(text: .constant(""), topLabel: "Test", placeholderText: "Tes1", unremovablePrefix: "")
+        TextFieldPattern(text: .constant(""), topLabel: "Test", placeholderText: "Test1", unremovablePrefix: "")
     }
 }

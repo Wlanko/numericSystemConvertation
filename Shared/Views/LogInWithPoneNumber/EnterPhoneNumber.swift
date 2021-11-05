@@ -21,28 +21,35 @@ struct EnterPhoneNumber: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
-                    .keyboardType(.decimalPad)
-                    .padding(.top, 10)
-                Spacer()
+            ZStack {
+                Image("beautifulBackgroundImage")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 
-                NavigationLink(destination: EnterVerificationCode()
-                                .navigationBarTitleDisplayMode(.inline)
-                                .navigationBarHidden(true),
-                               isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
-                
-                Button(nextText) {
-                    authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                VStack {
+                    TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
+                        .keyboardType(.decimalPad)
+                        .padding(.top, 10)
+                    Spacer()
+                    
+                    NavigationLink(destination: EnterVerificationCode()
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .navigationBarHidden(true),
+                                   isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+                    
+                    Button(nextText) {
+                        authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                    }
+                    .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                    .padding(.bottom, 10)
                 }
-                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                .padding(.bottom, 10)
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationBarTitleDisplayMode(.inline)
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            self.hideKeyboard()
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.hideKeyboard()
+            }
         }
     }
 }

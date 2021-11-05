@@ -24,49 +24,54 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack(alignment: .bottom) {
-                    TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
-                        .keyboardType(.decimalPad)
-                    TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
-                }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-                
-                HStack(alignment: .bottom) {
-                    TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
-                        .keyboardType(.decimalPad)
-                    TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
-                }
-                
-                
-                
-                Button(textForButton, action: {
-                    do {
-                        outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                                                                                  iNS: inputNumericSystem,
-                                                                                  oNS: outputNumericSystem)
-                    } catch {
-                        message = error.localizedDescription
-                        showingAlert = true
+            ZStack {
+                Image("beautifulBackgroundImage")
+                            .resizable()
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                VStack {
+                    HStack(alignment: .bottom) {
+                        TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
+                            .keyboardType(.decimalPad)
+                        TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
+                    }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    
+                    HStack(alignment: .bottom) {
+                        TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
+                            .keyboardType(.decimalPad)
+                        TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                     }
-                }).alert(isPresented: $showingAlert, content: {
-                    Alert(
-                        title: Text("Error"),
-                        message: Text(message)
-                    )
-                })
-                
-                    .padding(.top)
-                
-                Spacer()
+                    
+                    
+                    
+                    Button(textForButton, action: {
+                        do {
+                            outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
+                                                                                      iNS: inputNumericSystem,
+                                                                                      oNS: outputNumericSystem)
+                        } catch {
+                            message = error.localizedDescription
+                            showingAlert = true
+                        }
+                    }).alert(isPresented: $showingAlert, content: {
+                        Alert(
+                            title: Text("Error"),
+                            message: Text(message)
+                        )
+                    })
+                    
+                        .padding(.top)
+                    
+                    Spacer()
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(true)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.hideKeyboard()
+            }
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            self.hideKeyboard()
-        }
-        
     }
 }
 extension View {
