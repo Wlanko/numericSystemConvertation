@@ -20,35 +20,45 @@ struct EnterPhoneNumber: View {
     
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Image("beautifulBackgroundImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                
-                VStack {
-                    TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
-                        .keyboardType(.decimalPad)
-                        .padding(.top, 10)
-                    Spacer()
+        GeometryReader { geometry in
+            NavigationView {
+                ZStack {
+                    Image("beautifulBackgroundImage")
+                        .resizable()
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(width: geometry.size.width, height: geometry.size.height-35)
                     
-                    NavigationLink(destination: EnterVerificationCode()
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarHidden(true),
-                                   isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
-                    
-                    Button(nextText) {
-                        authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                    VStack {
+                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.7), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
+                            .frame(width: geometry.size.width,height: (geometry.size.height * 0.6))
+                            .padding(.top, -100)
+                        Spacer()
                     }
-                    .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.bottom, 10)
+                    
+                    VStack {
+                        TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
+                            .keyboardType(.decimalPad)
+                            .padding(.top, 10)
+                        Spacer()
+                        
+                        NavigationLink(destination: EnterVerificationCode()
+                                        .navigationBarTitleDisplayMode(.inline)
+                                        .navigationBarHidden(true),
+                                       isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+                        
+                        Button(nextText) {
+                            authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
+                        }
+                        .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 10)
+                    }
+                    .navigationBarTitleDisplayMode(.inline)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-            }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                self.hideKeyboard()
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.hideKeyboard()
+                }
             }
         }
     }

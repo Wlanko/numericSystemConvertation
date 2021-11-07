@@ -35,7 +35,7 @@ struct TextFieldPattern: View{
                 //.glowBorder(color: .white, lineWidth: 3)
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.black, lineWidth: 1)
+                        .stroke(Color.gray, lineWidth: 1)
                 )
                 .padding(5)
                 .onChange(of: text) { newValue in
