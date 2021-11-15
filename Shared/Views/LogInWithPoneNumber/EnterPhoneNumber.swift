@@ -20,7 +20,6 @@ struct EnterPhoneNumber: View {
     
     
     var body: some View {
-<<<<<<< Updated upstream
         NavigationView {
             ZStack {
                 Image("beautifulBackgroundImage")
@@ -33,15 +32,6 @@ struct EnterPhoneNumber: View {
                         .keyboardType(.decimalPad)
                         .padding(.top, 10)
                     Spacer()
-=======
-        GeometryReader { geometry in
-            NavigationView {
-                ZStack {
-                    Image("beautifulBackgroundImage")
-                        .resizable()
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: geometry.size.width, height: geometry.size.height - 35)
->>>>>>> Stashed changes
                     
                     NavigationLink(destination: EnterVerificationCode()
                                     .navigationBarTitleDisplayMode(.inline)

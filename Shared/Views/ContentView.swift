@@ -6,11 +6,6 @@
 //
 
 import SwiftUI
-import Combine
-
-class HideBarViewModel: ObservableObject {
-    @Published var isHidden = false
-}
 
 struct ContentView: View {
     @State var inputNumber: String = ""
@@ -19,7 +14,6 @@ struct ContentView: View {
     @State var outputNumericSystem: String = ""
     @State var showingAlert: Bool = false
     @State var message: String = ""
-    @State var showSettings: Bool = false
     
     let textForInputNumericSystem = "Input numeric system"
     let textForInputNumber = "Input number"
@@ -27,10 +21,6 @@ struct ContentView: View {
     let textForOutputNumber = "Output number"
     let textForButton = "Convert"
     let unremovablePrefix = ""
-    
-    
-    @ObservedObject var isHidden = HideBarViewModel()
-    
     
     var body: some View {
         NavigationView {
@@ -46,20 +36,11 @@ struct ContentView: View {
                         TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
                     }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     
-<<<<<<< Updated upstream
                     HStack(alignment: .bottom) {
                         TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                             .keyboardType(.decimalPad)
                         TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                     }
-=======
-                    VStack {
-                        LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.7), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
-                            .frame(width: geometry.size.width,height: (geometry.size.height * 0.7))
-                            .padding(.top, -10)
-                        Spacer()
-                    }.ignoresSafeArea()
->>>>>>> Stashed changes
                     
                     
                     
@@ -72,7 +53,6 @@ struct ContentView: View {
                             message = error.localizedDescription
                             showingAlert = true
                         }
-<<<<<<< Updated upstream
                     }).alert(isPresented: $showingAlert, content: {
                         Alert(
                             title: Text("Error"),
@@ -83,51 +63,6 @@ struct ContentView: View {
                         .padding(.top)
                     
                     Spacer()
-=======
-                        
-                        Button(textForButton, action: {
-                            do {
-                                outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                                                                                          iNS: inputNumericSystem,
-                                                                                          oNS: outputNumericSystem)
-                            } catch {
-                                message = error.localizedDescription
-                                showingAlert = true
-                            }
-                        }).alert(isPresented: $showingAlert, content: {
-                            Alert(
-                                title: Text("Error"),
-                                message: Text(message)
-                            )
-                        })
-                        
-                            .padding(.top)
-                        
-                        Spacer()
-                    }
-                    .padding(.top, 20)
-                    .navigationTitle("Conversion")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarItems(trailing: Button {showSettings = true} label: {
-                        Image("GearImage")
-                    })
-                    
-                      
-                    
-                    if #available(iOS 15.0.0, *) {
-                        NavigationLink(destination: SettingsView()
-                                        .navigationBarTitleDisplayMode(.inline)
-                                        .navigationTitle("Settings")
-                                        .navigationBarHidden(isHidden.isHidden),
-                                       isActive: $showSettings) { EmptyView() }.environmentObject(isHidden)
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    self.hideKeyboard()
->>>>>>> Stashed changes
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
@@ -139,7 +74,6 @@ struct ContentView: View {
         }
     }
 }
-
 extension View {
     func hideKeyboard() {
         let resign = #selector(UIResponder.resignFirstResponder)
