@@ -7,20 +7,6 @@
 
 import SwiftUI
 
-struct ChangeForegroundColor: ViewModifier {
-    var color: Color
-    
-    func body(content: Content) -> some View {
-        return content.foregroundColor(color)
-    }
-}
-
-extension View {
-    func changeTextFieldForegroundColor(color: Color) -> some View {
-        self.modifier(ChangeForegroundColor(color: color))
-    }
-}
-
 extension View {
     func placeholder<Content: View>(
         when shouldShow: Bool,

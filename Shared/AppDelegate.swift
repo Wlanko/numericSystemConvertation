@@ -14,6 +14,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     FirebaseApp.configure()
     print("SwiftUI_2_Lifecycle_PhoneNumber_AuthApp application is starting up. ApplicationDelegate didFinishLaunchingWithOptions.")
+      
+      let attrs = [
+        NSAttributedString.Key.foregroundColor: UIColor.white
+      ]
+
+      UINavigationBar.appearance().titleTextAttributes = attrs
     return true
   }
 

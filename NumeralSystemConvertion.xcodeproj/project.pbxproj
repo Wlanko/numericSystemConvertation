@@ -27,6 +27,8 @@
 		BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781313271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
 		BB781314271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
+		BB7951962738725D0046A6AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7951952738725D0046A6AC /* SettingsView.swift */; };
+		BB7951972738725D0046A6AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7951952738725D0046A6AC /* SettingsView.swift */; };
 		BB8CC7F82734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7F92734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7FB273495A900E247FE /* ChangeForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */; };
@@ -82,6 +84,7 @@
 		BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationWithPhoneNumber.swift; sourceTree = "<group>"; };
 		BB781312271357630055669E /* EnterVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCode.swift; sourceTree = "<group>"; };
 		BB781315271370180055669E /* NumeralSystemConvertion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumeralSystemConvertion.entitlements; sourceTree = "<group>"; };
+		BB7951952738725D0046A6AC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB8CC7F72734886100E247FE /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeForegroundColor.swift; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 			children = (
 				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
+				BB7951952738725D0046A6AC /* SettingsView.swift */,
 				BB781311271356E90055669E /* LogInWithPoneNumber */,
 			);
 			path = Views;
@@ -495,6 +499,7 @@
 				BB781313271357630055669E /* EnterVerificationCode.swift in Sources */,
 				BB78130F271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */,
 				BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
+				BB7951962738725D0046A6AC /* SettingsView.swift in Sources */,
 				BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BB8CC7F82734886100E247FE /* GlowBorder.swift in Sources */,
 				BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */,
@@ -514,6 +519,7 @@
 				BB781314271357630055669E /* EnterVerificationCode.swift in Sources */,
 				BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */,
 				BBC7B08E27010DA100E3B70F /* ConvertationHelper.swift in Sources */,
+				BB7951972738725D0046A6AC /* SettingsView.swift in Sources */,
 				BB52E62426FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */,
 				BB8CC7F92734886100E247FE /* GlowBorder.swift in Sources */,
 				BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */,
