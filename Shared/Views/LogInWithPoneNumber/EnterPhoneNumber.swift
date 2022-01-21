@@ -42,7 +42,7 @@ struct EnterPhoneNumber: View {
                         authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
                     }
                     .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 40)
                 }
                 .navigationBarTitleDisplayMode(.inline)
             }

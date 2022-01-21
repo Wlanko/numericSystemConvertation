@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var outputNumericSystem: String = ""
     @State var showingAlert: Bool = false
     @State var message: String = ""
+    @State var settings: Bool = false
     
     let textForInputNumericSystem = "Input numeric system"
     let textForInputNumber = "Input number"
@@ -29,6 +30,9 @@ struct ContentView: View {
                             .resizable()
                             .edgesIgnoringSafeArea(.all)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                
+                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
+                    .padding(.top, -32)
                 VStack {
                     HStack(alignment: .bottom) {
                         TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
@@ -64,8 +68,13 @@ struct ContentView: View {
                     
                     Spacer()
                 }
+                .padding(.top)
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarHidden(true)
+                .navigationTitle("Conversion screen")
+                .toolbar(){
+                    Button(action: { settings = true },
+                           label: { Image("settingsImage") })
+                }
             }
             .contentShape(Rectangle())
             .onTapGesture {
