@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State var inputNumber: String = ""
     @State var outputNumber: String = ""
@@ -14,6 +15,10 @@ struct ContentView: View {
     @State var outputNumericSystem: String = ""
     @State var showingAlert: Bool = false
     @State var message: String = ""
+<<<<<<< Updated upstream
+=======
+    @State var goToSettingsView: Bool = false
+>>>>>>> Stashed changes
     
     let textForInputNumericSystem = "Input numeric system"
     let textForInputNumber = "Input number"
@@ -29,6 +34,12 @@ struct ContentView: View {
                             .resizable()
                             .edgesIgnoringSafeArea(.all)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+<<<<<<< Updated upstream
+=======
+                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
+                    .padding(.top, -32)
+                
+>>>>>>> Stashed changes
                 VStack {
                     HStack(alignment: .bottom) {
                         TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
@@ -42,7 +53,10 @@ struct ContentView: View {
                         TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
                     }
                     
-                    
+                    NavigationLink(destination: SettingsView()
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .navigationBarHidden(true),
+                                   isActive: $goToSettingsView) { EmptyView() }
                     
                     Button(textForButton, action: {
                         do {
@@ -64,8 +78,19 @@ struct ContentView: View {
                     
                     Spacer()
                 }
+<<<<<<< Updated upstream
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
+=======
+                .padding(.top)
+                //.navigationBarHidden($settings)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Conversion screen")
+                .toolbar(){
+                    Button(action: { goToSettingsView = true },
+                           label: { Image("settingsImage") })
+                }
+>>>>>>> Stashed changes
             }
             .contentShape(Rectangle())
             .onTapGesture {
@@ -82,6 +107,7 @@ extension View {
 }
 
 
+@available(iOS 15.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

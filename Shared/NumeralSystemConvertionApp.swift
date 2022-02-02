@@ -15,7 +15,8 @@ struct NumeralSystemConvertionApp: App {
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser != nil {
-                ContentView()
+                //ContentView()
+                EnterPhoneNumber()
             } else {
                 EnterPhoneNumber()
             }

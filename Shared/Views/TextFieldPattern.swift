@@ -45,6 +45,7 @@ struct TextFieldPattern: View{
                         }
                     }
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
