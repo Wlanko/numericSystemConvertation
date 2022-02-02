@@ -22,6 +22,7 @@
 		BB736E5E272C441A0062C4B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */; };
 		BB736E5F272C441B0062C4B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB736E5D272C441A0062C4B9 /* GoogleService-Info.plist */; };
 		BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
+		BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7813082711B8F20055669E /* EnterPhoneNumber.swift */; };
 		BB78130F271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781313271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
@@ -34,8 +35,6 @@
 		BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
 		BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
-		BBC2C70F279B046300DA60F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C70E279B046300DA60F7 /* SettingsView.swift */; };
-		BBC2C710279B046300DA60F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C70E279B046300DA60F7 /* SettingsView.swift */; };
 		BBC649BF2718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC649BE2718663A00FFBEF6 /* NumericAuthUIDelegate.swift */; };
 		BBC649C02718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC649BE2718663A00FFBEF6 /* NumericAuthUIDelegate.swift */; };
 		BBC7B08D27010DA100E3B70F /* ConvertationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */; };
@@ -87,7 +86,6 @@
 		BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeForegroundColor.swift; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
 		BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPattern.swift; sourceTree = "<group>"; };
-		BBC2C70E279B046300DA60F7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BBC649BE2718663A00FFBEF6 /* NumericAuthUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericAuthUIDelegate.swift; sourceTree = "<group>"; };
 		BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertationHelper.swift; sourceTree = "<group>"; };
 		CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (macOS)/Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
 				BB781311271356E90055669E /* LogInWithPoneNumber */,
-				BBC2C70E279B046300DA60F7 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -504,7 +501,6 @@
 				BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5B271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
 				BBC649BF2718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
-				BBC2C70F279B046300DA60F7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
 				BB8CC7FC273495A900E247FE /* ChangeForegroundColor.swift in Sources */,
 				BB781314271357630055669E /* EnterVerificationCode.swift in Sources */,
@@ -523,7 +520,6 @@
 				BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5C271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
 				BBC649C02718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
-				BBC2C710279B046300DA60F7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
