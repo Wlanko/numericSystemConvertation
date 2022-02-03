@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0.0, *)
 struct ContentView: View {
     @State var inputNumber: String = ""
     @State var outputNumber: String = ""
@@ -100,6 +101,7 @@ extension View {
 }
 
 
+@available(iOS 15.0.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

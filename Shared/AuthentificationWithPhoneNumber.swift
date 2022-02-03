@@ -61,6 +61,11 @@ class AuthWithPhoneNumber: ObservableObject {
     }
     
     func logOut(){
-        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch {
+            print("Sign out error")
+        }
     }
 }
