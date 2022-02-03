@@ -59,4 +59,8 @@ class AuthWithPhoneNumber: ObservableObject {
             self.presentMainView = true
         }
     }
+    
+    func logOut(){
+        
+    }
 }

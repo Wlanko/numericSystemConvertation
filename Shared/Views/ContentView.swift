@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var outputNumericSystem: String = ""
     @State var showingAlert: Bool = false
     @State var message: String = ""
+    @State var goToSettingsView: Bool = false
     
     let textForInputNumericSystem = "Input numeric system"
     let textForInputNumber = "Input number"
@@ -33,6 +34,11 @@ struct ContentView: View {
                     LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
                         .padding(.top, -95)
                         .ignoresSafeArea(.keyboard, edges: .bottom)
+                    
+                    NavigationLink(destination: SettingsView()
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .navigationBarHidden(true),
+                                   isActive: $goToSettingsView) { EmptyView() }
                     
                     VStack {
                         HStack(alignment: .bottom) {
@@ -64,8 +70,7 @@ struct ContentView: View {
                                 message: Text(message)
                             )
                         })
-                        
-                            .padding(.top)
+                        .padding(.top)
                         
                         Spacer()
                     }
@@ -73,7 +78,7 @@ struct ContentView: View {
                     .navigationTitle("Conversion")
                     .toolbar{
                         Button(action: {
-                            
+                            goToSettingsView = true
                         }) {
                             Image("GearImage")
                         }
