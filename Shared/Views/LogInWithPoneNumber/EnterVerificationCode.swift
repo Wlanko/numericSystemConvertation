@@ -32,7 +32,6 @@ struct EnterVerificationCode: View {
                             .keyboardType(.decimalPad)
                             .padding(.top, 10)
                         
-                        Spacer()
                         
                         NavigationLink(destination: ContentView()
                                         .navigationBarTitleDisplayMode(.inline)
@@ -43,7 +42,9 @@ struct EnterVerificationCode: View {
                             authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
                         }
                         .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                        .padding(.bottom, 80)
+                        .padding(.top, 20)
+                        
+                        Spacer()
                         
                     }
                     .padding(.top)

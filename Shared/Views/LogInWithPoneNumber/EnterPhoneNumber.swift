@@ -38,7 +38,6 @@ struct EnterPhoneNumber: View {
                             .keyboardType(.decimalPad)
                             .padding(.top, 20)
                         
-                        Spacer()
                         
                         NavigationLink(destination: EnterVerificationCode()
                                         .navigationBarTitleDisplayMode(.inline)
@@ -49,7 +48,9 @@ struct EnterPhoneNumber: View {
                             authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
                         }
                         .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                        .padding(.bottom, 60)
+                        .padding(.top, 20)
+                        
+                        Spacer()
                     }
                     .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
                     .padding(.bottom, 10)
