@@ -13,6 +13,8 @@ struct EnterVerificationCode: View {
     let unremovablePrefix = ""
     @State var verificationCode: String = ""
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView {
             GeometryReader { _ in
@@ -47,6 +49,13 @@ struct EnterVerificationCode: View {
                     .padding(.top)
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationTitle("Log In")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button("Back") {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
+                    }
                 }
                 .contentShape(Rectangle())
                 .onTapGesture {
@@ -54,6 +63,12 @@ struct EnterVerificationCode: View {
                 }
             }
         }
+        .gesture(
+            DragGesture()
+                .onEnded() {_ in
+                    presentationMode.wrappedValue.dismiss()
+                }
+        )
     }
 }
 
