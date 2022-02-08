@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
 
 @available(iOS 15.0.0, *)
 struct ContentView: View {
@@ -58,6 +60,7 @@ struct ContentView: View {
                         
                         Button(textForButton, action: {
                             do {
+                                //Analytics.setUserProperty(inputNumericSystem, forName: "favorite_food")
                                 outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
                                                                                           iNS: inputNumericSystem,
                                                                                           oNS: outputNumericSystem)
@@ -89,6 +92,7 @@ struct ContentView: View {
                 .onTapGesture {
                     self.hideKeyboard()
                 }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
             }
         }
     }

@@ -26,6 +26,7 @@ struct NumeralSystemConvertionApp: App {
             let navBarAppearance = UINavigationBar.appearance()
             navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            //FirebaseApp.configure()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

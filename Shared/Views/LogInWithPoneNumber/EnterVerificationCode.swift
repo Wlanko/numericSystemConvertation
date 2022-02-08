@@ -62,6 +62,7 @@ struct EnterVerificationCode: View {
                 .onTapGesture {
                     self.hideKeyboard()
                 }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
             }
         }
         .gesture(
