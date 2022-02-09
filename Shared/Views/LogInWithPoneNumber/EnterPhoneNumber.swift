@@ -22,42 +22,31 @@ struct EnterPhoneNumber: View {
     var body: some View {
         NavigationView {
             GeometryReader { _ in
-                ZStack {
-                    Image("beautifulBackgroundImage")
-                        .resizable()
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .ignoresSafeArea(.keyboard, edges: .bottom)
-                    
-                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
-                        .padding(.top, -95)
-                        .ignoresSafeArea(.keyboard, edges: .bottom)
-                    
-                    VStack {
-                        TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
-                            .keyboardType(.decimalPad)
-                            .padding(.top, 20)
-                        
-                        
-                        NavigationLink(destination: EnterVerificationCode()
-                                        .navigationBarTitleDisplayMode(.inline)
-                                        .navigationBarHidden(true),
-                                       isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
-                        
-                        Button(nextText) {
-                            authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
-                        }
-                        .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                VStack {
+                    TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
+                        .keyboardType(.decimalPad)
                         .padding(.top, 20)
-                        
-                        Spacer()
+                    
+                    
+                    NavigationLink(destination: EnterVerificationCode()
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .navigationBarHidden(true),
+                                   isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+                    
+                    Button(nextText) {
+                        authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
                     }
                     .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.bottom, 10)
-                    .padding(.top)
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Log In")
+                    .padding(.top, 20)
+                    
+                    Spacer()
                 }
+                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                .padding(.bottom, 10)
+                .padding(.top)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Log In")
+                .background(BeautifulBackground())
                 .ignoresSafeArea(.keyboard)
                 .contentShape(Rectangle())
                 .onTapGesture {

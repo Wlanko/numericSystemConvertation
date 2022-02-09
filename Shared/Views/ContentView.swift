@@ -29,65 +29,45 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             GeometryReader { _ in
-                ZStack {
-                    Image("beautifulBackgroundImage")
-                        .resizable()
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
-                        .padding(.top, -95)
-                        .ignoresSafeArea(.keyboard, edges: .bottom)
+                VStack {
+                    FourTextFieldPattern(inputparameter: $inputNumericSystem, outputparameter: $outputNumericSystem, input: $inputNumber, output: $outputNumber, textForInputParameter: textForInputNumericSystem, textForInput: textForInputNumber, textForOutputParameter: textForOutputNumericSystem, textForOutput: textForOutputNumber)
                     
-                    NavigationLink(destination: SettingsView()
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarHidden(true),
-                                   isActive: $goToSettingsView) { EmptyView() }
                     
-                    VStack {
-                        HStack(alignment: .bottom) {
-                            TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
-                                .keyboardType(.decimalPad)
-                            TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
-                        }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-                        
-                        HStack(alignment: .bottom) {
-                            TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
-                                .keyboardType(.decimalPad)
-                            TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
+                        NavigationLink(destination: SettingsView()
+                                        .navigationBarTitleDisplayMode(.inline)
+                                        .navigationBarHidden(true),
+                                       isActive: $goToSettingsView) { EmptyView() }
+                    
+                    Button(textForButton, action: {
+                        do {
+                            outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
+                                                                                      iNS: inputNumericSystem,
+                                                                                      oNS: outputNumericSystem)
+                        } catch {
+                            message = error.localizedDescription
+                            showingAlert = true
                         }
-                        
-                        
-                        
-                        Button(textForButton, action: {
-                            do {
-                                //Analytics.setUserProperty(inputNumericSystem, forName: "favorite_food")
-                                outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                                                                                          iNS: inputNumericSystem,
-                                                                                          oNS: outputNumericSystem)
-                            } catch {
-                                message = error.localizedDescription
-                                showingAlert = true
-                            }
-                        }).alert(isPresented: $showingAlert, content: {
-                            Alert(
-                                title: Text("Error"),
-                                message: Text(message)
-                            )
-                        })
+                    }).alert(isPresented: $showingAlert, content: {
+                        Alert(
+                            title: Text("Error"),
+                            message: Text(message)
+                        )
+                    })
                         .padding(.top)
-                        
-                        Spacer()
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Conversion")
-                    .toolbar{
-                        Button(action: {
-                            goToSettingsView = true
-                        }) {
-                            Image("GearImage")
-                        }
+                    
+                    Spacer()
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Conversion")
+                .toolbar{
+                    Button(action: {
+                        goToSettingsView = true
+                    }) {
+                        Image("GearImage")
                     }
                 }
+                .background(BeautifulBackground())
+                
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.hideKeyboard()

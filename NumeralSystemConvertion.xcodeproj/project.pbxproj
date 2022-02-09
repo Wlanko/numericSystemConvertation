@@ -27,6 +27,10 @@
 		BB781314271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
 		BB81B7DD27B2AEA20091A797 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BB81B7DC27B2AEA20091A797 /* FirebaseAnalytics */; };
 		BB81B7DF27B2AEA20091A797 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB81B7DE27B2AEA20091A797 /* FirebaseAuth */; };
+		BB81B7E227B3B7540091A797 /* FourTextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */; };
+		BB81B7E327B3B7540091A797 /* FourTextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */; };
+		BB81B7E527B3C9B70091A797 /* BeautifulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */; };
+		BB81B7E627B3C9B70091A797 /* BeautifulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */; };
 		BB8CC7F82734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7F92734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7FB273495A900E247FE /* ChangeForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */; };
@@ -81,6 +85,8 @@
 		BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationWithPhoneNumber.swift; sourceTree = "<group>"; };
 		BB781312271357630055669E /* EnterVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCode.swift; sourceTree = "<group>"; };
 		BB781315271370180055669E /* NumeralSystemConvertion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumeralSystemConvertion.entitlements; sourceTree = "<group>"; };
+		BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTextFieldPattern.swift; sourceTree = "<group>"; };
+		BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulBackground.swift; sourceTree = "<group>"; };
 		BB8CC7F72734886100E247FE /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeForegroundColor.swift; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
@@ -127,10 +133,10 @@
 		5E94EA2D270A05DE00A84F95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
+				BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
 				BB781311271356E90055669E /* LogInWithPoneNumber */,
-				BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */,
+				BB81B7E027B3B5690091A797 /* SoppportingViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +225,16 @@
 				BB781312271357630055669E /* EnterVerificationCode.swift */,
 			);
 			path = LogInWithPoneNumber;
+			sourceTree = "<group>";
+		};
+		BB81B7E027B3B5690091A797 /* SoppportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
+				BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */,
+				BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */,
+			);
+			path = SoppportingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB81B7E227B3B7540091A797 /* FourTextFieldPattern.swift in Sources */,
 				BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62526FF473900B910BD /* ContentView.swift in Sources */,
 				BB8CC7FB273495A900E247FE /* ChangeForegroundColor.swift in Sources */,
@@ -400,6 +417,7 @@
 				BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5B271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
+				BB81B7E527B3C9B70091A797 /* BeautifulBackground.swift in Sources */,
 				BBC649BF2718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
 				BBA1D2F127AC0B7F00117A35 /* SettingsView.swift in Sources */,
 			);
@@ -409,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB81B7E327B3B7540091A797 /* FourTextFieldPattern.swift in Sources */,
 				BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
 				BB8CC7FC273495A900E247FE /* ChangeForegroundColor.swift in Sources */,
@@ -420,6 +439,7 @@
 				BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5C271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
+				BB81B7E627B3C9B70091A797 /* BeautifulBackground.swift in Sources */,
 				BBC649C02718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
 				BBA1D2F227AC0B7F00117A35 /* SettingsView.swift in Sources */,
 			);

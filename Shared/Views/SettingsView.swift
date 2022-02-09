@@ -16,58 +16,44 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("beautifulBackgroundImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .ignoresSafeArea(.keyboard, edges: .bottom)
+            VStack {
+                Text("Some cool app description")
+                    .foregroundColor(.gray)
+                    .padding(.top, 40)
                 
-                LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0)]), startPoint: .top, endPoint: .bottom)
-                    .padding(.top, -95)
-                    .ignoresSafeArea(.keyboard, edges: .bottom)
+                Spacer()
                 
                 NavigationLink(destination: EnterPhoneNumber()
                                 .navigationBarTitleDisplayMode(.inline)
                                 .navigationBarHidden(true),
                                isActive: $goToLogInScreen) { EmptyView() }
                 
-                VStack {
-                    Text("Some cool app description")
-                        .foregroundColor(.gray)
-                        .padding(.top, 40)
-                    
-                    Spacer()
-                    
-                    Button("Log Out") {
-                        showLogOutAlert = true
-                    }
-                    .alert(isPresented: $showLogOutAlert){
-                        Alert(
-                            title: Text("Log out"),
-                            message: Text("Are you sure you wnt to log out?"),
-                            primaryButton: .destructive(Text("YESS")) {
-                                authWithPhoneNumber.logOut()
-                                goToLogInScreen = true
-                            },
-                            secondaryButton: .cancel(Text("NO"))
-                        )
-                    }
-                    .padding(.bottom, 60)
-                    
+                Button("Log Out") {
+                    showLogOutAlert = true
                 }
-                
-                .navigationTitle("Settings")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Back") {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    }
+                .alert(isPresented: $showLogOutAlert){
+                    Alert(
+                        title: Text("Log out"),
+                        message: Text("Are you sure you wnt to log out?"),
+                        primaryButton: .destructive(Text("YESS")) {
+                            authWithPhoneNumber.logOut()
+                            goToLogInScreen = true
+                        },
+                        secondaryButton: .cancel(Text("NO"))
+                    )
                 }
-                
+                .padding(.bottom, 60)
             }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Back") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
+            .background(BeautifulBackground())
         }
         .gesture(
             DragGesture()
