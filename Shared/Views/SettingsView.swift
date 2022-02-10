@@ -54,13 +54,13 @@ struct SettingsView: View {
                 }
             }
             .background(BeautifulBackground())
+            .gesture(
+                DragGesture()
+                    .onEnded() {_ in
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            )
         }
-        .gesture(
-            DragGesture()
-                .onEnded() {_ in
-                    presentationMode.wrappedValue.dismiss()
-                }
-        )
     }
 }
 

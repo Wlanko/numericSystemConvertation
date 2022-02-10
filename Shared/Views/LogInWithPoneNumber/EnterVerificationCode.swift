@@ -17,51 +17,48 @@ struct EnterVerificationCode: View {
     
     var body: some View {
         NavigationView {
-            GeometryReader { _ in
-                VStack{
-                    TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField, unremovablePrefix: unremovablePrefix)
-                        .keyboardType(.decimalPad)
-                        .padding(.top, 10)
-                    
-                    
-                    NavigationLink(destination: ContentView()
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarHidden(true),
-                                   isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
-                    
-                    Button("Next") {
-                        authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
-                    }
-                    .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.top, 20)
-                    
-                    Spacer()
-                    
+            VStack{
+                TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField, unremovablePrefix: unremovablePrefix)
+                    .keyboardType(.decimalPad)
+                    .padding(.top, 10)
+                
+                
+                NavigationLink(destination: ContentView()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
+                
+                Button("Next") {
+                    authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
                 }
-                .padding(.top)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Log In")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Back") {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                    }
-                }
-                .background(BeautifulBackground())
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    self.hideKeyboard()
-                }
-                .ignoresSafeArea(.keyboard, edges: .bottom)
+                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                .padding(.top, 20)
+                
+                Spacer()
             }
-        }
-        .gesture(
-            DragGesture()
-                .onEnded() {_ in
-                    presentationMode.wrappedValue.dismiss()
+            .padding(.top)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Log In")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Back") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
-        )
+            }
+            .background(BeautifulBackground())
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.hideKeyboard()
+            }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
+            .gesture(
+                DragGesture()
+                    .onEnded() {_ in
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            )
+        }
     }
 }
 

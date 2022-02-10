@@ -28,52 +28,50 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            GeometryReader { _ in
-                VStack {
-                    FourTextFieldPattern(inputparameter: $inputNumericSystem, outputparameter: $outputNumericSystem, input: $inputNumber, output: $outputNumber, textForInputParameter: textForInputNumericSystem, textForInput: textForInputNumber, textForOutputParameter: textForOutputNumericSystem, textForOutput: textForOutputNumber)
-                    
-                    
-                        NavigationLink(destination: SettingsView()
-                                        .navigationBarTitleDisplayMode(.inline)
-                                        .navigationBarHidden(true),
-                                       isActive: $goToSettingsView) { EmptyView() }
-                    
-                    Button(textForButton, action: {
-                        do {
-                            outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                                                                                      iNS: inputNumericSystem,
-                                                                                      oNS: outputNumericSystem)
-                        } catch {
-                            message = error.localizedDescription
-                            showingAlert = true
-                        }
-                    }).alert(isPresented: $showingAlert, content: {
-                        Alert(
-                            title: Text("Error"),
-                            message: Text(message)
-                        )
-                    })
-                        .padding(.top)
-                    
-                    Spacer()
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Conversion")
-                .toolbar{
-                    Button(action: {
-                        goToSettingsView = true
-                    }) {
-                        Image("GearImage")
-                    }
-                }
-                .background(BeautifulBackground())
+            VStack {
+                FourTextFieldPattern(inputparameter: $inputNumericSystem, outputparameter: $outputNumericSystem, input: $inputNumber, output: $outputNumber, textForInputParameter: textForInputNumericSystem, textForInput: textForInputNumber, textForOutputParameter: textForOutputNumericSystem, textForOutput: textForOutputNumber)
                 
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    self.hideKeyboard()
-                }
-                .ignoresSafeArea(.keyboard, edges: .bottom)
+                
+                NavigationLink(destination: SettingsView()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $goToSettingsView) { EmptyView() }
+                
+                Button(textForButton, action: {
+                    do {
+                        outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
+                                                                                  iNS: inputNumericSystem,
+                                                                                  oNS: outputNumericSystem)
+                    } catch {
+                        message = error.localizedDescription
+                        showingAlert = true
+                    }
+                }).alert(isPresented: $showingAlert, content: {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(message)
+                    )
+                })
+                    .padding(.top)
+                
+                Spacer()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Conversion")
+            .toolbar{
+                Button(action: {
+                    goToSettingsView = true
+                }) {
+                    Image("GearImage")
+                }
+            }
+            .background(BeautifulBackground())
+            
+            .contentShape(Rectangle())
+            .onTapGesture {
+                self.hideKeyboard()
+            }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
     }
 }
