@@ -13,37 +13,51 @@ struct EnterVerificationCode: View {
     let unremovablePrefix = ""
     @State var verificationCode: String = ""
     @ObservedObject var authWithPhoneNumber = AuthWithPhoneNumber()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("beautifulBackgroundImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            VStack{
+                TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField, unremovablePrefix: unremovablePrefix)
+                    .keyboardType(.decimalPad)
+                    .padding(.top, 10)
                 
-                VStack{
-                    TextFieldPattern(text: $verificationCode, topLabel: textForVerificarionCodeTextField, placeholderText: textForVerificarionCodeTextField, unremovablePrefix: unremovablePrefix)
-                    
-                    Spacer()
-                    
-                    NavigationLink(destination: ContentView()
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarHidden(true),
-                                   isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
-                    
-                    Button("Next") {
-                        authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
-                    }
-                    .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.bottom, 10)
-                    
+                
+                NavigationLink(destination: ContentView()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $authWithPhoneNumber.presentMainView) { EmptyView() }
+                
+                Button("Next") {
+                    authWithPhoneNumber.signInUserWithVErificationCode(verificationCode: self.verificationCode)
                 }
-                .navigationBarTitleDisplayMode(.inline)
+                .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+                .padding(.top, 20)
+                
+                Spacer()
             }
+            .padding(.top)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Log In")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Back") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
+            .background(BeautifulBackground())
             .contentShape(Rectangle())
             .onTapGesture {
                 self.hideKeyboard()
             }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
+            .gesture(
+                DragGesture()
+                    .onEnded() {_ in
+                        presentationMode.wrappedValue.dismiss()
+                    }
+            )
         }
     }
 }

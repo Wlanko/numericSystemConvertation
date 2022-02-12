@@ -40,7 +40,7 @@ struct TextFieldPattern: View{
                 .padding(5)
                 .onChange(of: text) { newValue in
                         if !newValue.hasPrefix(unremovablePrefix) {
-                            text = unremovablePrefix + self.text
+                            text = unremovablePrefix
                             self.text = text
                         }
                     }

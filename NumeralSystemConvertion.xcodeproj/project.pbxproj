@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		085A58B0FB19446964F8CE79 /* Pods_NumeralSystemConvertion__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */; };
-		61E6250A9787C8A71F24946A /* Pods_NumeralSystemConvertion__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */; };
 		BB52E61626FF473900B910BD /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E61526FF473900B910BD /* Tests_iOS.swift */; };
 		BB52E62126FF473900B910BD /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E62026FF473900B910BD /* Tests_macOS.swift */; };
 		BB52E62326FF473900B910BD /* NumeralSystemConvertionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */; };
@@ -27,12 +25,20 @@
 		BB781310271345860055669E /* AuthentificationWithPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */; };
 		BB781313271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
 		BB781314271357630055669E /* EnterVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB781312271357630055669E /* EnterVerificationCode.swift */; };
+		BB81B7DD27B2AEA20091A797 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BB81B7DC27B2AEA20091A797 /* FirebaseAnalytics */; };
+		BB81B7DF27B2AEA20091A797 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB81B7DE27B2AEA20091A797 /* FirebaseAuth */; };
+		BB81B7E227B3B7540091A797 /* FourTextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */; };
+		BB81B7E327B3B7540091A797 /* FourTextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */; };
+		BB81B7E527B3C9B70091A797 /* BeautifulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */; };
+		BB81B7E627B3C9B70091A797 /* BeautifulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */; };
 		BB8CC7F82734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7F92734886100E247FE /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7F72734886100E247FE /* GlowBorder.swift */; };
 		BB8CC7FB273495A900E247FE /* ChangeForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */; };
 		BB8CC7FC273495A900E247FE /* ChangeForegroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */; };
 		BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
 		BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */; };
+		BBA1D2F127AC0B7F00117A35 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */; };
+		BBA1D2F227AC0B7F00117A35 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */; };
 		BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
 		BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */; };
 		BBC649BF2718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC649BE2718663A00FFBEF6 /* NumericAuthUIDelegate.swift */; };
@@ -59,9 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumeralSystemConvertion__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumeralSystemConvertion__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (iOS).release.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		BB52E5FA26FF473700B910BD /* NumeralSystemConvertionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumeralSystemConvertionApp.swift; sourceTree = "<group>"; };
 		BB52E5FB26FF473700B910BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB52E5FC26FF473900B910BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,15 +85,15 @@
 		BB78130E271345860055669E /* AuthentificationWithPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationWithPhoneNumber.swift; sourceTree = "<group>"; };
 		BB781312271357630055669E /* EnterVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCode.swift; sourceTree = "<group>"; };
 		BB781315271370180055669E /* NumeralSystemConvertion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NumeralSystemConvertion.entitlements; sourceTree = "<group>"; };
+		BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourTextFieldPattern.swift; sourceTree = "<group>"; };
+		BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautifulBackground.swift; sourceTree = "<group>"; };
 		BB8CC7F72734886100E247FE /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		BB8CC7FA273495A900E247FE /* ChangeForegroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeForegroundColor.swift; sourceTree = "<group>"; };
 		BB9755AD27078DFB005E1825 /* ErrorHandlingForConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingForConversion.swift; sourceTree = "<group>"; };
+		BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPattern.swift; sourceTree = "<group>"; };
 		BBC649BE2718663A00FFBEF6 /* NumericAuthUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericAuthUIDelegate.swift; sourceTree = "<group>"; };
 		BBC7B08C27010DA100E3B70F /* ConvertationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertationHelper.swift; sourceTree = "<group>"; };
-		CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (macOS)/Pods-NumeralSystemConvertion (macOS).debug.xcconfig"; sourceTree = "<group>"; };
-		EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (macOS).release.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (macOS)/Pods-NumeralSystemConvertion (macOS).release.xcconfig"; sourceTree = "<group>"; };
-		FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumeralSystemConvertion (iOS).debug.xcconfig"; path = "Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				085A58B0FB19446964F8CE79 /* Pods_NumeralSystemConvertion__iOS_.framework in Frameworks */,
+				BB81B7DD27B2AEA20091A797 /* FirebaseAnalytics in Frameworks */,
+				BB81B7DF27B2AEA20091A797 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61E6250A9787C8A71F24946A /* Pods_NumeralSystemConvertion__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,9 +133,10 @@
 		5E94EA2D270A05DE00A84F95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
+				BBA1D2F027AC0B7F00117A35 /* SettingsView.swift */,
 				BB52E5FB26FF473700B910BD /* ContentView.swift */,
 				BB781311271356E90055669E /* LogInWithPoneNumber */,
+				BB81B7E027B3B5690091A797 /* SoppportingViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,8 +151,6 @@
 				BB52E61426FF473900B910BD /* Tests iOS */,
 				BB52E61F26FF473900B910BD /* Tests macOS */,
 				BB52E60226FF473900B910BD /* Products */,
-				D1D4617D834EDAE205318D3A /* Pods */,
-				D5E7C0B9CCDD574A3FD38B9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,24 +227,14 @@
 			path = LogInWithPoneNumber;
 			sourceTree = "<group>";
 		};
-		D1D4617D834EDAE205318D3A /* Pods */ = {
+		BB81B7E027B3B5690091A797 /* SoppportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */,
-				B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */,
-				CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */,
-				EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */,
+				BBA62BB127062A55000D5D96 /* TextFieldPattern.swift */,
+				BB81B7E127B3B7540091A797 /* FourTextFieldPattern.swift */,
+				BB81B7E427B3C9B70091A797 /* BeautifulBackground.swift */,
 			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		D5E7C0B9CCDD574A3FD38B9A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				30796788E9CBA5E197A0D24D /* Pods_NumeralSystemConvertion__iOS_.framework */,
-				860EFD84000BF71EDB196361 /* Pods_NumeralSystemConvertion__macOS_.framework */,
-			);
-			name = Frameworks;
+			path = SoppportingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,18 +244,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB52E62B26FF473900B910BD /* Build configuration list for PBXNativeTarget "NumeralSystemConvertion (iOS)" */;
 			buildPhases = (
-				749D5E776D16F48EC7C2D39C /* [CP] Check Pods Manifest.lock */,
 				BB52E5FD26FF473900B910BD /* Sources */,
 				BB52E5FE26FF473900B910BD /* Frameworks */,
 				BB52E5FF26FF473900B910BD /* Resources */,
-				B6ACCF0C0DE2B013F917EBD8 /* [CP] Embed Pods Frameworks */,
-				11826897CCA1ACC625CEFE73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "NumeralSystemConvertion (iOS)";
+			packageProductDependencies = (
+				BB81B7DC27B2AEA20091A797 /* FirebaseAnalytics */,
+				BB81B7DE27B2AEA20091A797 /* FirebaseAuth */,
+			);
 			productName = "NumeralSystemConvertion (iOS)";
 			productReference = BB52E60126FF473900B910BD /* NumeralSystemConvertion.app */;
 			productType = "com.apple.product-type.application";
@@ -272,7 +265,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB52E62E26FF473900B910BD /* Build configuration list for PBXNativeTarget "NumeralSystemConvertion (macOS)" */;
 			buildPhases = (
-				172BFC5AFB2A6FD147AD47E4 /* [CP] Check Pods Manifest.lock */,
 				BB52E60526FF473900B910BD /* Sources */,
 				BB52E60626FF473900B910BD /* Frameworks */,
 				BB52E60726FF473900B910BD /* Resources */,
@@ -333,9 +325,11 @@
 				TargetAttributes = {
 					BB52E60026FF473900B910BD = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1310;
 					};
 					BB52E60826FF473900B910BD = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1310;
 					};
 					BB52E61026FF473900B910BD = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -356,6 +350,9 @@
 				Base,
 			);
 			mainGroup = BB52E5F426FF473600B910BD;
+			packageReferences = (
+				BB81B7DB27B2AEA20091A797 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BB52E60226FF473900B910BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,92 +400,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		11826897CCA1ACC625CEFE73 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		172BFC5AFB2A6FD147AD47E4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NumeralSystemConvertion (macOS)-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		749D5E776D16F48EC7C2D39C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NumeralSystemConvertion (iOS)-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6ACCF0C0DE2B013F917EBD8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NumeralSystemConvertion (iOS)/Pods-NumeralSystemConvertion (iOS)-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BB52E5FD26FF473900B910BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB81B7E227B3B7540091A797 /* FourTextFieldPattern.swift in Sources */,
 				BB7813092711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62526FF473900B910BD /* ContentView.swift in Sources */,
 				BB8CC7FB273495A900E247FE /* ChangeForegroundColor.swift in Sources */,
@@ -500,7 +417,9 @@
 				BBA62BB227062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AE27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5B271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
+				BB81B7E527B3C9B70091A797 /* BeautifulBackground.swift in Sources */,
 				BBC649BF2718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
+				BBA1D2F127AC0B7F00117A35 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB81B7E327B3B7540091A797 /* FourTextFieldPattern.swift in Sources */,
 				BB78130A2711B8F20055669E /* EnterPhoneNumber.swift in Sources */,
 				BB52E62626FF473900B910BD /* ContentView.swift in Sources */,
 				BB8CC7FC273495A900E247FE /* ChangeForegroundColor.swift in Sources */,
@@ -519,7 +439,9 @@
 				BBA62BB327062A55000D5D96 /* TextFieldPattern.swift in Sources */,
 				BB9755AF27078DFB005E1825 /* ErrorHandlingForConversion.swift in Sources */,
 				BB736E5C271CAC8D0062C4B9 /* AppDelegate.swift in Sources */,
+				BB81B7E627B3C9B70091A797 /* BeautifulBackground.swift in Sources */,
 				BBC649C02718663A00FFBEF6 /* NumericAuthUIDelegate.swift in Sources */,
+				BBA1D2F227AC0B7F00117A35 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -659,6 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -668,16 +592,16 @@
 		};
 		BB52E62C26FF473900B910BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC9DDFE1CDA276676C19D511 /* Pods-NumeralSystemConvertion (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NumeralSystemConvertion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47J4D692KF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,6 +609,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Wlanko.NumeralSystemConvertion;
 				PRODUCT_NAME = NumeralSystemConvertion;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/NumeralSystemConvertion (iOS)-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -692,16 +619,16 @@
 		};
 		BB52E62D26FF473900B910BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B80BF39F90D99FCA4E37FDEE /* Pods-NumeralSystemConvertion (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NumeralSystemConvertion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47J4D692KF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,6 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Wlanko.NumeralSystemConvertion;
 				PRODUCT_NAME = NumeralSystemConvertion;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/NumeralSystemConvertion (iOS)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -717,10 +645,10 @@
 		};
 		BB52E62F26FF473900B910BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC42ADE6F7DEFE04C73C569F /* Pods-NumeralSystemConvertion (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -736,16 +664,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Wlanko.NumeralSystemConvertion;
 				PRODUCT_NAME = NumeralSystemConvertion;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/NumeralSystemConvertion (macOS)-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		BB52E63026FF473900B910BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA062A2A96E8B04DADDBB9D0 /* Pods-NumeralSystemConvertion (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -761,6 +691,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Wlanko.NumeralSystemConvertion;
 				PRODUCT_NAME = NumeralSystemConvertion;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/NumeralSystemConvertion (macOS)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -903,6 +834,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB81B7DB27B2AEA20091A797 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB81B7DC27B2AEA20091A797 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB81B7DB27B2AEA20091A797 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BB81B7DE27B2AEA20091A797 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB81B7DB27B2AEA20091A797 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BB52E5F526FF473600B910BD /* Project object */;
 }

@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
 
+@available(iOS 15.0.0, *)
 struct ContentView: View {
     @State var inputNumber: String = ""
     @State var outputNumber: String = ""
@@ -14,6 +17,7 @@ struct ContentView: View {
     @State var outputNumericSystem: String = ""
     @State var showingAlert: Bool = false
     @State var message: String = ""
+    @State var goToSettingsView: Bool = false
     
     let textForInputNumericSystem = "Input numeric system"
     let textForInputNumber = "Input number"
@@ -24,53 +28,50 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("beautifulBackgroundImage")
-                            .resizable()
-                            .edgesIgnoringSafeArea(.all)
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                VStack {
-                    HStack(alignment: .bottom) {
-                        TextFieldPattern(text: $inputNumericSystem, topLabel: textForInputNumericSystem, placeholderText: textForInputNumericSystem, unremovablePrefix: unremovablePrefix)
-                            .keyboardType(.decimalPad)
-                        TextFieldPattern(text: $inputNumber, topLabel: textForInputNumber, placeholderText: textForInputNumber, unremovablePrefix: unremovablePrefix)
-                    }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-                    
-                    HStack(alignment: .bottom) {
-                        TextFieldPattern(text: $outputNumericSystem, topLabel: textForOutputNumericSystem, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
-                            .keyboardType(.decimalPad)
-                        TextFieldPattern(text: $outputNumber, topLabel: textForOutputNumber, placeholderText: textForOutputNumber, unremovablePrefix: unremovablePrefix)
+            VStack {
+                FourTextFieldPattern(inputparameter: $inputNumericSystem, outputparameter: $outputNumericSystem, input: $inputNumber, output: $outputNumber, textForInputParameter: textForInputNumericSystem, textForInput: textForInputNumber, textForOutputParameter: textForOutputNumericSystem, textForOutput: textForOutputNumber)
+                
+                
+                NavigationLink(destination: SettingsView()
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarHidden(true),
+                               isActive: $goToSettingsView) { EmptyView() }
+                
+                Button(textForButton, action: {
+                    do {
+                        outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
+                                                                                  iNS: inputNumericSystem,
+                                                                                  oNS: outputNumericSystem)
+                    } catch {
+                        message = error.localizedDescription
+                        showingAlert = true
                     }
-                    
-                    
-                    
-                    Button(textForButton, action: {
-                        do {
-                            outputNumber = try ConvertationHelper.numericConvertation(iNum: inputNumber,
-                                                                                      iNS: inputNumericSystem,
-                                                                                      oNS: outputNumericSystem)
-                        } catch {
-                            message = error.localizedDescription
-                            showingAlert = true
-                        }
-                    }).alert(isPresented: $showingAlert, content: {
-                        Alert(
-                            title: Text("Error"),
-                            message: Text(message)
-                        )
-                    })
-                    
-                        .padding(.top)
-                    
-                    Spacer()
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarHidden(true)
+                }).alert(isPresented: $showingAlert, content: {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(message)
+                    )
+                })
+                    .padding(.top)
+                
+                Spacer()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Conversion")
+            .toolbar{
+                Button(action: {
+                    goToSettingsView = true
+                }) {
+                    Image("GearImage")
+                }
+            }
+            .background(BeautifulBackground())
+            
             .contentShape(Rectangle())
             .onTapGesture {
                 self.hideKeyboard()
             }
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
     }
 }
@@ -82,6 +83,7 @@ extension View {
 }
 
 
+@available(iOS 15.0.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

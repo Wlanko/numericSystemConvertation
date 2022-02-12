@@ -21,35 +21,37 @@ struct EnterPhoneNumber: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("beautifulBackgroundImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                
-                VStack {
-                    TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
-                        .keyboardType(.decimalPad)
-                        .padding(.top, 10)
-                    Spacer()
-                    
-                    NavigationLink(destination: EnterVerificationCode()
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarHidden(true),
-                                   isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
-                    
-                    Button(nextText) {
-                        authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
-                    }
-                    .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
-                    .padding(.bottom, 10)
-                }
-                .navigationBarTitleDisplayMode(.inline)
+            VStack {
+            TextFieldPattern(text: $phoneNumber, topLabel: phoneNumberText, placeholderText: phoneNumberText, unremovablePrefix: unremovablePrefix)
+                .keyboardType(.decimalPad)
+                .padding(.top, 20)
+            
+            
+            NavigationLink(destination: EnterVerificationCode()
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationBarHidden(true),
+                           isActive: $authWithPhoneNumber.presentEnterPasswordView) { EmptyView() }
+            
+            Button(nextText) {
+                authWithPhoneNumber.passPhoneNumber(phoneNumber: phoneNumber, authUIDelegate: authDelegat)
             }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                self.hideKeyboard()
-            }
+            .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+            .padding(.top, 20)
+            
+            Spacer()
+        }
+        .alert(authWithPhoneNumber.errorMessage, isPresented: $authWithPhoneNumber.showErrorAlert, actions: {})
+        .padding(.bottom, 10)
+        .padding(.top)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Log In")
+        .background(BeautifulBackground())
+        .ignoresSafeArea(.keyboard)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            self.hideKeyboard()
+        }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         }
     }
 }
