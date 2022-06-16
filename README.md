@@ -9,7 +9,6 @@
   
 TODO
 
-
 ## Minimum distance function
 Our first function is called min_distance and it will return a vertex with a minimum distance from the source.
 We use the for loop for the vertex variable in a certain range, which we define using the len function.
@@ -60,14 +59,14 @@ Itadori/Nobara: Ro-ppo-ngi!!
 
 Gojo: There is a curse here
 
-#Itadory/Nobara: You are a lier
+# Itadory/Nobara: You are a lier
 Itadori: This isn’t even Roppongi!
 Nobara: You were toying with us, country folk!
 Gojo: There is a big cemetery nearby. The double whammy of that and an abandoned building brought out the curse.
 Itadori: So they really do pop up more often around graves? 
 Nobara: Who does he thinks is responsible for the rice he gets to eat, huh? 
 Megumi: The issue isn’t the cemetery itself. Its the fact that people associate cemetery with fear. 
-#Itadori: Oh, it was the same for schools too, wasn’t it?
+# Itadori: Oh, it was the same for schools too, wasn’t it?
 Nobara: Hold up, he didn’t even know that yet?
 Megumi: To be honest…
 Nobara: He swallowed a special grade cursed object?! Gvvh? Unbelievable?! That’s so unsanitary and disgusting! 
@@ -75,14 +74,14 @@ Nobara: No way.(4x)(said with fear and trembling)
 Itadori: What? 
 Megumi: I agree with her
 Gojo: I want to know what all of you are capable of. Just think of it as a field test. Nobara, Yuuji you two go exorcise the curse inside that building. 
-#Nobara: Шо…?
+# Nobara: Шо…?
 Itadori: Га, I thought only curses could exorcise curses, right? I cannot use any jujutsu yet.
 Gojo: you are basically halve a curse already. There is a cursed energy flowing throughout your body. Thou controlling that energy isn’t something you can learn over night. So use this.
 *every one is confused* 
 Gojo: It’s the cursed tool, Slaughter Demon. Its a weapon imbued with a cursed energy. It will work on curses too.
 Nobara: Lame 
 
-#Gojo: O one more thing, don’t let Sukuna out. 
+# Gojo: O one more thing, don’t let Sukuna out. 
 Gojo: If you use it you will get rid of all the curses nearby in a flash. But you will also drag everyone around into it
 Itadori: Got it, I won’t let Sukuna out
 Nobara: Hurry it up!
