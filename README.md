@@ -9,30 +9,50 @@
   
 TODO
 
- #Itadori, Nobara, Megumi, Gojo.
 
-Nobara: Stare
+## Minimum distance function
+Our first function is called min_distance and it will return a vertex with a minimum distance from the source.
+We use the for loop for the vertex variable in a certain range, which we define using the len function.
+If the condition of the loop is true, then we go to the condition if and check the validity of the conditions specified in it,
+if they are true, the vertex with the minimum distance from the source will be found. After the cycle, return the found vertex.
 
-#Itadori: I’m Itadori Yuuji, I’m from Sendai.
+## Dijkstra algorithm function
+Next we call a function that describes the Dijkstra algorithm that we use to modify the graph.
+Find the number of vertices in the graph using the len () function. Then use the defaultdict dictionary
+to check if this vertex is already included in the shortest path tree.
+Then find the shortest distance for all vertices from the source.
 
-Megumi: Fushigiro Megumi 
+# First for cycle
+After completing the steps,
+run the for loop for the variable count in the range of all vertices of the graph and determine the current vertex,
+which is not yet included in the tree of the shortest path. Performing this action gives it the value True.
 
-#Nobara: He looks like a potato. He is definitely the type that ate his own boogers as a kid.
-Nobara: And only a name here? I can’t stand high and mighty dudes. I bet he likes setting oils liked gulls on fire. I always get stuck unfortunate circumstances.
+# Second for cycle
+If the condition of the loop is true, and the actions in its body have been performed, we move on to the next loop for
+inside the given for the vertex variable in the range of all vertices of the graph. Inside the loop we enter the condition if,
+which in the absence of a given vertex in the graph tree, the weight of the source is greater than the weight of the current
+vertex in the sum of the weight of the modified edge and the weight of this edge in the graph is not zero.
 
-Itadori: She took one look and sighed 
+# Third for cycle
+Then run another for loop, which will display the vertex number and the shortest distance to it from the source.
 
-Megumi: Are we going somewhere from here? 
+## Bellman-Ford algorithm function
+Next, we turn to the function that describes the Bellman-Ford algorithm. Add the source vertex s to the existing graph.
+We start a loop for the variable i in the range of all vertices of the graph with which we add edges to the graph.
+After that, in the for loop for the variable i in the range of all vertices, we run another cycle, which uses the
+condition inside it to calculate the minimum weight from the added vertex to each existing vertex.
+After exiting the loop, use the return function so that the values ​​do not return to the added source.
 
-#Gojo: We do have all three of you together. Not to mention two of you are from the countryside. So of course we are going on a tour of Tokyo. 
+## Johnson's algorithm function
+Next, we turn to the main function that implements Johnson's algorithm. We create a list of edges of the graph determined
+by the Bellman-Ford algorithm. To do this, run the for loop for the variable i, in the body of which run another for loop
+for the variable j. If the edge under consideration is not equal to 0, the condition if specified in the loop is true and
+this edge is added to the list.
 
-Itadory/Nobara: We love Tokyo
-Megumi: Шо...??
-
-#Nobara: TDL! I want to go to TDL!
-Itadori: Idiot TDL is in Chiba! Lets go to the Chinatown Sensei
-Nobara: Chinatown is in Yokohama!
-Itadory: Yokohama is part of Tokyo! Don’t you now that? Look at the map.
+# Creating altered graph and altered weights
+We create a variable that will indicate the weights of the ribs that we use to change the original weights.
+To do this, we take the data determined by the function describing the Bellman-Ford algorithm. Next, create a
+new modified graph with the same number of vertices as in the input using the for loop and the len () function.
 
 Gojo: I will now announce our destination. The hell!? Ouit spouting nonsense! Roppongi
 
